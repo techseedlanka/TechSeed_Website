@@ -290,6 +290,10 @@ section.bg-primary-foot{
             box-sizing: border-box;
     padding: 15px;
 }
+.herotitle h1{
+    font-weight: 700;
+    font-size: 48px;
+}
 .hero-socials{
     position: absolute;
     height: 80%;
@@ -777,7 +781,7 @@ a.fc-white::after{
     width: calc(var(--pTextSize) * 1.5); height: -webkit-calc(var(--pTextSize) * 1.5); height: -moz-calc(var(--pTextSize) * 1.5); height: calc(var(--pTextSize) * 1.5);
     font-size: var(--pTextSize);
     background-color: var(--bgWhite);
-    color: var(--primaryColor);
+    color: #001140;
     -webkit-border-radius: -webkit-calc(var(--pTextSize) / 2);
        -moz-border-radius: -moz-calc(var(--pTextSize) / 2);
             border-radius: calc(var(--pTextSize) / 2);
@@ -822,7 +826,7 @@ button{
     color: var(--textWhite);
 }
 .btn-bg2{
-    background-color: var(--bgWhite);
+    background-color: #1866ff;
     color: var(--textBlack);
 }
 
