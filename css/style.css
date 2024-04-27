@@ -2,9 +2,9 @@
     Handcoded by JAC - Johnny Alimoot C.
 */
 :root{
-    --h1TextSize: 2.66em;
-    --h2TextSize: 1.90em;
-    --h3TextSize: 1.52em;
+    --h1TextSize: 48px;
+    --h2TextSize: 30px;
+    --h3TextSize: 24px;
     --h4TextSize: 1.14em;
     --h5TextSize: 1em;
     --pTextSize: 1em;
@@ -72,9 +72,9 @@ hr{
     opacity: 0.5;
 }
 
-h1 { font-size: var(--h1TextSize); }
-h2, .fs-h2 { font-size: var(--h2TextSize); font-weight: bold; display: block; }
-h3, .fs-h3 { font-size: var(--h3TextSize); font-weight: bold; display: block; }
+h1 { font-size: var(--h1TextSize);font-weight: 700; }
+h2, .fs-h2 { font-size: var(--h2TextSize); font-weight: 700; display: block; }
+h3, .fs-h3 { font-size: var(--h3TextSize); font-weight: 500; display: block; }
 h4, .fs-h4 { font-size: var(--h4TextSize); font-weight: bold; display: block; }
 h5, .fs-h5 { font-size: var(--h5TextSize); font-weight: bold; display: block; }
 p, .fs-p { font-size: var(--pTextSize); display: block; }
@@ -214,7 +214,7 @@ section{
          -o-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     background-color: var(--bgWhite);
-    color: var(--primaryColor);
+    color: #1866ff;
     border-top: 5px solid var(--primaryBgBody);
     -webkit-border-radius: var(--h2TextSize);
        -moz-border-radius: var(--h2TextSize);
@@ -289,10 +289,6 @@ section.bg-primary-foot{
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     padding: 15px;
-}
-.hero-title h1{
-    font-weight: 700;
-    font-size: 48px;
 }
 .hero-socials{
     position: absolute;
@@ -381,8 +377,8 @@ section.bg-primary-foot{
 
 .card-team{
     position: relative;
-    height: 400px;
-    width: 80%;
+    height: 300px;
+    width: 90%;
     margin: auto;
     -webkit-border-radius: 15px;
        -moz-border-radius: 15px;
@@ -822,7 +818,7 @@ button{
 }
 
 .btn-bg1{
-    background-color: var(--primaryColor);
+    background-color: #1866ff;
     color: var(--textWhite);
 }
 .btn-bg2{
