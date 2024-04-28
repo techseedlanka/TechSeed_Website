@@ -1,6 +1,10 @@
 /* 
     Handcoded by JAC - Johnny Alimoot C.
 */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: 'damion';
     src: url('../font/Damion.ttf');
@@ -25,8 +29,8 @@
 }
 
 .ff-damion{
-    font-family: 'damion';
-    font-weight: normal !important;
+    font-family: "Fira Code", monospace;
+    /* font-weight: normal !important; because this is overwriting new edits! <NB> */
 }
 
 .fc-white{

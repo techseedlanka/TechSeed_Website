@@ -75,6 +75,9 @@
 .col-wide{
     width: 70%;
 }
+.col-tri1{
+    width: 25%;
+}
 .col-tri{
     width: 33.33%;
 }
