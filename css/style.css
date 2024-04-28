@@ -4,7 +4,7 @@
 :root{
     --h1TextSize: 48px;
     --h2TextSize: 30px;
-    --h3TextSize: 24px;
+    --h3TextSize: 20px;
     --h4TextSize: 1.14em;
     --h5TextSize: 1em;
     --pTextSize: 1em;
@@ -168,7 +168,7 @@ nav > div{
     color: var(--textWhite);
 }
 .bg-primary-foot{
-    background-color: var(--primaryBgFoot) !important;
+    background-color: #001140 !important;
     color: var(--textWhite) !important;
     -webkit-border-radius: unset;
        -moz-border-radius: unset;
@@ -288,7 +288,7 @@ section.bg-primary-foot{
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 15px;
+    /* padding: 0px; */
 }
 .hero-socials{
     position: absolute;
@@ -377,7 +377,7 @@ section.bg-primary-foot{
 
 .card-team{
     position: relative;
-    height: 300px;
+    height: 375px;
     width: 90%;
     margin: auto;
     -webkit-border-radius: 15px;
@@ -419,19 +419,23 @@ section.bg-primary-foot{
 .card-team > .title{
     padding: 5px 0 5px 15px;
     margin: 0;
+    color: #1866ff;
     -webkit-transition-delay: 0.5s;
        -moz-transition-delay: 0.5s;
          -o-transition-delay: 0.5s;
             transition-delay: 0.5s;
 }
+.card-team > .info h3{
+    color: #1866ff;
+}
 .card-team > .info{
-    height: 60%;
+    height: 100%;
     -webkit-transform: translateY(100%);
        -moz-transform: translateY(100%);
         -ms-transform: translateY(100%);
          -o-transform: translateY(100%);
             transform: translateY(100%);
-    overflow: auto;
+    overflow: hidden;
     padding: 15px;
 }
 .card-team:hover > img{
@@ -823,13 +827,13 @@ button{
 }
 .btn-bg2{
     background-color: #1866ff;
-    color: var(--textBlack);
+    color: var(--bgWhite);
 }
 
 /* Hovers */
 a:hover,
 a:focus{
-    color: var(--primaryColor);
+    color: var(--bgWhite);
 }
 a:hover:after,
 a:focus::after{
