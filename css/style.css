@@ -259,12 +259,12 @@ section.bg-primary-foot{
             border-radius: unset;
     margin: unset;
 }
-.hero-banner{
+/* .hero-banner{
     -webkit-animation: hero-slideshow 15s infinite linear;
        -moz-animation: hero-slideshow 15s infinite linear;
          -o-animation: hero-slideshow 15s infinite linear;
             animation: hero-slideshow 15s infinite linear;
-}
+} */
 .sub-hero-banner{
     height: 60vh;
 }
@@ -377,8 +377,8 @@ section.bg-primary-foot{
 
 .card-team{
     position: relative;
-    height: 375px;
-    width: 90%;
+    height: 355px;
+    width: 100%;
     margin: auto;
     -webkit-border-radius: 15px;
        -moz-border-radius: 15px;
@@ -389,6 +389,7 @@ section.bg-primary-foot{
     overflow: hidden;
 }
 .card-team > img{
+    width: 100%;
     -webkit-transition: -webkit-transform 0.5s;
     transition: -webkit-transform 0.5s;
     -o-transition: -o-transform 0.5s;
@@ -482,31 +483,15 @@ section.bg-primary-foot{
 }
 .card-blog > .info{
     position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-       -moz-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
     padding: 0 10px;
 }
-.card-blog > .info > :first-child{
-    padding-right: 5px;
-}
-.card-blog:hover{
-    -webkit-box-shadow: 0 0 27px var(--shadowColor);
-       -moz-box-shadow: 0 0 27px var(--shadowColor);
-            box-shadow: 0 0 27px var(--shadowColor);
-    -webkit-transform: translateY(-10px);
-       -moz-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-         -o-transform: translateY(-10px);
-            transform: translateY(-10px);
-}
+
+.col-tri:hover, .col-tri2:hover {
+    box-shadow: 0 0 27px var(--shadowColor);
+    transform: translateY(-10px);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  
 
 .card-career{
     position: relative;
@@ -656,12 +641,15 @@ section.bg-primary-foot{
 
 .subscribe{
     position: relative;
-    background: fixed no-repeat center bottom / cover;
+    background-size: cover;
     z-index: 1;
     padding: 50px 0;
 }
 .subscribe > div{
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 .subscribe::before{
     content: "";
@@ -833,7 +821,7 @@ button{
 /* Hovers */
 a:hover,
 a:focus{
-    color: var(--bgWhite);
+    color: #001140;
 }
 a:hover:after,
 a:focus::after{
@@ -895,6 +883,63 @@ a.fc-white{
          -o-animation: fade 1s ease-out;
             animation: fade 1s ease-out;
 }
+
+/* valued partners start */
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 40px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 60px;
+    margin: 0 30px;
+    width: 60px;
+  }
+
+
+/* valued partners end */
 
 
 /* Tablet View */
