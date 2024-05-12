@@ -81,6 +81,12 @@
 .col-tri{
     width: 33.33%;
 }
+.col-tri2{
+    width: 30%;
+    background-color: #001b66;
+    margin: 1rem;
+    border-radius: 2rem;
+}
 .col-quad{
     width: 25%;
 }
