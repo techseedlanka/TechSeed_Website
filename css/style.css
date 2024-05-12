@@ -1,10 +1,7 @@
-/* 
-    Handcoded by JAC - Johnny Alimoot C.
-*/
 :root{
     --h1TextSize: 48px;
     --h2TextSize: 30px;
-    --h3TextSize: 20px;
+    --h3TextSize: 24px;
     --h4TextSize: 1.14em;
     --h5TextSize: 1em;
     --pTextSize: 1em;
@@ -820,11 +817,11 @@ button{
 
 /* Hovers */
 a:hover,
-a:focus{
+a:focus, .focusedlink{
     color: #001140;
 }
 a:hover:after,
-a:focus::after{
+a:focus::after, .focusedlink::after{
     -webkit-transform: none;
        -moz-transform: none;
         -ms-transform: none;
