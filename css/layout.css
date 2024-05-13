@@ -90,6 +90,10 @@
 .col-quad{
     width: 25%;
 }
+.col-quad > img{
+    height: 6rem;
+    width: 10rem;
+}
 .col-full{
     width: 100%;
 }
