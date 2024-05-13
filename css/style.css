@@ -88,7 +88,7 @@ nav{
        -moz-box-shadow: 0 8px 27px -10px var(--shadowColor);
             box-shadow: 0 8px 27px -10px var(--shadowColor);
     background-color: var(--bgWhite);
-    height: var(--navHeight);
+    height: 150px;
     z-index: 10;
 }
 nav::before{
@@ -116,7 +116,7 @@ nav > div{
     margin: 0 5px 0 5px;
 }
 .logo{
-    height: var(--navHeight);
+    height: 150px;
 }
 .logo::after{
     content: unset;
@@ -280,7 +280,7 @@ section.bg-primary-foot{
 }
 .hero-title{
     position: relative;
-    width: 50%;
+    width: 75%;
     z-index: 1;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -386,7 +386,11 @@ section.bg-primary-foot{
     overflow: hidden;
 }
 .card-team > img{
-    width: 100%;
+    width: 12rem;
+    height: 12rem;
+    margin: 1rem auto;
+    align-items: center;
+    display: grid;
     -webkit-transition: -webkit-transform 0.5s;
     transition: -webkit-transform 0.5s;
     -o-transition: -o-transform 0.5s;
