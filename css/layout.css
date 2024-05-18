@@ -91,8 +91,12 @@
     width: 25%;
 }
 .col-quad > img{
-    height: 6rem;
-    width: 10rem;
+    position: relative;
+    width: 95%;
+    border-radius: .1px;
+    height: 2rem;
+    object-fit: fill;
+    margin-top: 1.3rem;
 }
 .col-full{
     width: 100%;

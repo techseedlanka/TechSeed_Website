@@ -1,10 +1,13 @@
+/* header font */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 :root{
     --h1TextSize: 48px;
     --h2TextSize: 30px;
     --h3TextSize: 24px;
     --h4TextSize: 1.14em;
     --h5TextSize: 1em;
-    --pTextSize: 1em;
+    --pTextSize: 18px;
     --smTextSize: 0.85em;
 
     --shadowColor: #525f8014;
@@ -21,7 +24,7 @@
     --selectionBg : #5a6282;
     --selectionText : #eaecf4;
 
-    --navHeight : 74px;
+    --navHeight : 130px;
 }
 
 ::-webkit-scrollbar{
@@ -69,11 +72,11 @@ hr{
     opacity: 0.5;
 }
 
-h1 { font-size: var(--h1TextSize);font-weight: 700; }
-h2, .fs-h2 { font-size: var(--h2TextSize); font-weight: 700; display: block; }
-h3, .fs-h3 { font-size: var(--h3TextSize); font-weight: 500; display: block; }
-h4, .fs-h4 { font-size: var(--h4TextSize); font-weight: bold; display: block; }
-h5, .fs-h5 { font-size: var(--h5TextSize); font-weight: bold; display: block; }
+h1 { font-size: var(--h1TextSize);font-weight: 700;font-family: "Lora", serif; }
+h2, .fs-h2 { font-size: var(--h2TextSize); font-weight: 700; display: block;font-family: "Lora", serif; }
+h3, .fs-h3 { font-size: var(--h3TextSize); font-weight: 500; display: block;font-family: "Lora", serif; }
+h4, .fs-h4 { font-size: var(--h4TextSize); font-weight: bold; display: block;font-family: "Lora", serif; }
+h5, .fs-h5 { font-size: var(--h5TextSize); font-weight: bold; display: block;font-family: "Lora", serif; }
 p, .fs-p { font-size: var(--pTextSize); display: block; }
 li{ font-size: var(--pTextSize); }
 small { font-size: var(--smTextSize); }
@@ -262,9 +265,9 @@ section.bg-primary-foot{
          -o-animation: hero-slideshow 15s infinite linear;
             animation: hero-slideshow 15s infinite linear;
 } */
-.sub-hero-banner{
-    height: 60vh;
-}
+/* .sub-hero-banner{
+    height: 80vh;
+} */
 
 .hero-banner::before,
 .sub-hero-banner::before{
@@ -406,7 +409,7 @@ section.bg-primary-foot{
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    background-color: var(--primaryBgFoot);
+    background-color: #a9a9a9 ;
     color: var(--bgWhite);
     -webkit-border-radius: 15px 15px 0 0;
        -moz-border-radius: 15px 15px 0 0;
@@ -421,14 +424,14 @@ section.bg-primary-foot{
 .card-team > .title{
     padding: 5px 0 5px 15px;
     margin: 0;
-    color: #1866ff;
+    color: var(--bgWhite);
     -webkit-transition-delay: 0.5s;
        -moz-transition-delay: 0.5s;
          -o-transition-delay: 0.5s;
             transition-delay: 0.5s;
 }
-.card-team > .info h3{
-    color: #1866ff;
+.card-team > h3{
+    color: var(--bgWhite);
 }
 .card-team > .info{
     height: 100%;
@@ -439,6 +442,10 @@ section.bg-primary-foot{
             transform: translateY(100%);
     overflow: hidden;
     padding: 15px;
+}
+
+.card-team > .info >p{
+    font-size: 16px;
 }
 .card-team:hover > img{
     -webkit-transform: translateY(-25%) scale(1.1);
@@ -697,21 +704,22 @@ footer > .copy{
     resize: vertical;
 }
 
-.border-round,
-.map-embed > iframe{
+/* .map-embed > iframe*/
+.border-round
+{ 
     -webkit-border-radius: 12px;
        -moz-border-radius: 12px;
             border-radius: 12px;
 }
 
-.map-embed > iframe{
+/* .map-embed > iframe{
     width: 100%;
     height: 100%;
     border: none;
     -webkit-box-shadow: 0 2px 10px -5px var(--shadowColor);
        -moz-box-shadow: 0 2px 10px -5px var(--shadowColor);
             box-shadow: 0 2px 10px -5px var(--shadowColor);
-}
+} */
 
 /* Buttons and links */
 .tab-mob-menu{
@@ -768,9 +776,10 @@ a.fc-white::after{
     width: -webkit-calc(var(--pTextSize) * 1.5);
     width: -moz-calc(var(--pTextSize) * 1.5);
     width: calc(var(--pTextSize) * 1.5); height: -webkit-calc(var(--pTextSize) * 1.5); height: -moz-calc(var(--pTextSize) * 1.5); height: calc(var(--pTextSize) * 1.5);
-    font-size: var(--pTextSize);
+    font-size: 15px;
     background-color: var(--bgWhite);
     color: #001140;
+    margin-right: .2rem;
     -webkit-border-radius: -webkit-calc(var(--pTextSize) / 2);
        -moz-border-radius: -moz-calc(var(--pTextSize) / 2);
             border-radius: calc(var(--pTextSize) / 2);
@@ -1025,9 +1034,9 @@ a.fc-white{
         display: none;
     }
 
-    .map-embed > iframe{
+    /* .map-embed > iframe{
         height: 300px;
-    }
+    } */
 
     .card-side-navigation{
         max-height: unset;
