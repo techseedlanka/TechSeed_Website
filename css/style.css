@@ -6,8 +6,8 @@
     --h2TextSize: 30px;
     --h3TextSize: 24px;
     --h4TextSize: 1.14em;
-    --h5TextSize: 1em;
-    --pTextSize: 18px;
+    --h5TextSize: 16px;
+    --pTextSize: 16px;
     --smTextSize: 0.85em;
 
     --shadowColor: #525f8014;
@@ -24,7 +24,7 @@
     --selectionBg : #5a6282;
     --selectionText : #eaecf4;
 
-    --navHeight : 130px;
+    --navHeight : 74px;
 }
 
 ::-webkit-scrollbar{
@@ -91,7 +91,7 @@ nav{
        -moz-box-shadow: 0 8px 27px -10px var(--shadowColor);
             box-shadow: 0 8px 27px -10px var(--shadowColor);
     background-color: var(--bgWhite);
-    height: 150px;
+    height: var(--navHeight);
     z-index: 10;
 }
 nav::before{
@@ -118,8 +118,10 @@ nav > div{
 .navigation-container > a{
     margin: 0 5px 0 5px;
 }
-.logo{
-    height: 150px;
+.logo > img{
+    height: var(--navHeight);
+    width: 20rem;
+    object-fit: fill;
 }
 .logo::after{
     content: unset;
