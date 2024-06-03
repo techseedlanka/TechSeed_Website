@@ -32,6 +32,7 @@
 .ml-15 { margin-left: 15px; }
 .ml-20 { margin-left: 20px; }
 .ml-25 { margin-left: 25px; }
+.ml-6rem { margin-left: 6rem; }
 
 .row{
     display: -webkit-box;
@@ -42,6 +43,10 @@
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+}
+
+.gap-6{
+    gap: 6rem;
 }
 
 .flex-just-center{
@@ -72,18 +77,29 @@
 .col-slim{
     width: 30%;
 }
+.col-next{
+    width: 45%;
+}
+.col-Nextslim{
+    width: 40%;
+}
 .col-wide{
-    width: 70%;
+    width: 80%;
 }
 .col-tri1{
-    width: 25%;
+    width: 23%;
+    background-color: #ffffff;
+    color: var(--textBlack) !important;
+    margin: .8rem;
+    border-radius: 2rem;
 }
 .col-tri{
     width: 33.33%;
 }
 .col-tri2{
     width: 30%;
-    background-color: #001b66;
+    background-color: #ffffff;
+    color: var(--textBlack) !important;
     margin: 1rem;
     border-radius: 2rem;
 }

@@ -6,8 +6,8 @@
     --h2TextSize: 30px;
     --h3TextSize: 24px;
     --h4TextSize: 1.14em;
-    --h5TextSize: 16px;
-    --pTextSize: 16px;
+    --h5TextSize: 18px;
+    --pTextSize: 17px;
     --smTextSize: 0.85em;
 
     --shadowColor: #525f8014;
@@ -72,16 +72,17 @@ hr{
     opacity: 0.5;
 }
 
-h1 { font-size: var(--h1TextSize);font-weight: 700;font-family: "Lora", serif; }
-h2, .fs-h2 { font-size: var(--h2TextSize); font-weight: 700; display: block;font-family: "Lora", serif; }
-h3, .fs-h3 { font-size: var(--h3TextSize); font-weight: 500; display: block;font-family: "Lora", serif; }
-h4, .fs-h4 { font-size: var(--h4TextSize); font-weight: bold; display: block;font-family: "Lora", serif; }
-h5, .fs-h5 { font-size: var(--h5TextSize); font-weight: bold; display: block;font-family: "Lora", serif; }
+h1 { font-size: var(--h1TextSize);font-weight: 700;font-family: 'nunito'; }
+h2, .fs-h2 { font-size: var(--h2TextSize); font-weight: 700; display: block;font-family: 'nunito'; }
+h3, .fs-h3 { font-size: var(--h3TextSize); font-weight: 600; display: block;font-family: 'nunito'; }
+h4, .fs-h4 { font-size: var(--h4TextSize); font-weight: bold; display: block;font-family: 'nunito'; }
+h5, .fs-h5 { font-size: var(--h5TextSize); font-weight: bold; display: block;font-family: 'nunito'; }
 p, .fs-p { font-size: var(--pTextSize); display: block; }
 li{ font-size: var(--pTextSize); }
 small { font-size: var(--smTextSize); }
 .display-block{ display: block; }
 .display-inblock{ display: inline-block; }
+.introP{font-size: 18px; font-weight: 600;}
 
 nav{
     position: -webkit-sticky;
@@ -123,9 +124,9 @@ nav > div{
     width: 20rem;
     object-fit: fill;
 }
-.logo::after{
-    content: unset;
-}
+/* .logo::after{
+    /* content: unset; 
+} */
 
 .btn-back-to-top{
     position: fixed;
@@ -267,9 +268,9 @@ section.bg-primary-foot{
          -o-animation: hero-slideshow 15s infinite linear;
             animation: hero-slideshow 15s infinite linear;
 } */
-/* .sub-hero-banner{
-    height: 80vh;
-} */
+.sub-hero-banner{
+    height:60vh;
+}
 
 .hero-banner::before,
 .sub-hero-banner::before{
@@ -362,7 +363,7 @@ section.bg-primary-foot{
 }
 .sticky-img-dual-spacer{
     width: 100%;
-    height: 150px;
+    height: 90px;
 }
 .sticky-img-dual > .blob{
     position: absolute;
@@ -496,7 +497,7 @@ section.bg-primary-foot{
     padding: 0 10px;
 }
 
-.col-tri:hover, .col-tri2:hover {
+.col-tri:hover, .col-tri2:hover, .col-tri1:hover {
     box-shadow: 0 0 27px var(--shadowColor);
     transform: translateY(-10px);
     transition: box-shadow 0.3s, transform 0.3s;
@@ -676,11 +677,11 @@ section.bg-primary-foot{
 footer{
     position: relative;
     margin-top: 100px;
-    background-color: var(--primaryBgFoot);
+    background-color: #001140;
 }
 footer > .copy{
     padding: 10px 0;
-    background-color: var(--bgBlack);
+    background-color: #010a23;
 }
 
 .message-form input,
@@ -781,7 +782,7 @@ a.fc-white::after{
     font-size: 15px;
     background-color: var(--bgWhite);
     color: #001140;
-    margin-right: .2rem;
+    margin-right: .6rem;
     -webkit-border-radius: -webkit-calc(var(--pTextSize) / 2);
        -moz-border-radius: -moz-calc(var(--pTextSize) / 2);
             border-radius: calc(var(--pTextSize) / 2);
@@ -953,6 +954,20 @@ a.fc-white{
 
 /* valued partners end */
 
+/* What Sets Us Apart section start */
+.who_sets img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    margin: .5rem auto;
+}
+
+.who_sets .info{
+    display: flex;
+    flex-direction: column;
+}
+
+/* What Sets Us Apart section end */
 
 /* Tablet View */
 @media only screen and (max-width: 992px) {
