@@ -29,7 +29,7 @@
 }
 
 .ff-damion{
-    font-family: "Lora", serif;
+    font-family: 'nunito';
     /* font-weight: normal !important; because this is overwriting new edits! <NB> */
 }
 
@@ -40,6 +40,12 @@
 .fc-primary{
     color: #1866ff;
 }
+
+/* .fc-secondary{
+    color:  #324381;
+    font-size: 20px;
+    font-weight:400;
+} */
 
 .fw-normal{
     font-weight: normal !important;
