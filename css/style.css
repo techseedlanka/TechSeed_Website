@@ -969,6 +969,14 @@ a.fc-white{
 
 /* What Sets Us Apart section end */
 
+/* service section start */
+.serviceImg{
+    width: 64px;
+    height:64px;
+}
+
+/* service section end */
+
 /* Tablet View */
 @media only screen and (max-width: 992px) {
 
