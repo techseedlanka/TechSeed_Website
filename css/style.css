@@ -977,6 +977,13 @@ a.fc-white{
 
 /* service section end */
 
+/* Industries page */
+
+.industriesSec .row{
+    display: flex;
+    justify-content: center;
+}
+
 /* Tablet View */
 @media only screen and (max-width: 992px) {
 
