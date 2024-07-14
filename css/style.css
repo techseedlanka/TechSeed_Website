@@ -11,7 +11,7 @@
     --smTextSize: 0.85em;
 
     --shadowColor: #525f8014;
-    --bgWhite : #ffffff;
+    --bgWhite : #F5F5F5 ;
     --bgBlack : #232527;
 
     --primaryColor : #324381;
@@ -64,9 +64,12 @@ img{
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
+}
+
+.border-radius-20 {
     -webkit-border-radius: 20px;
-       -moz-border-radius: 20px;
-            border-radius: 20px;
+    -moz-border-radius: 20px;
+         border-radius: 20px;
 }
 hr{
     opacity: 0.5;
@@ -98,6 +101,7 @@ nav{
 nav::before{
     position: absolute;
     content: "";
+    z-index: 1000;
     pointer-events: none;
     top: -webkit-calc(-100% + 5px);
     top: -moz-calc(-100% + 5px);
@@ -278,8 +282,8 @@ section.bg-primary-foot{
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: var(--primaryColor);
-    opacity: 0.6;
+    /* background-color: var(--primaryColor); */
+    /* opacity: 0.6; */
     -webkit-filter: brightness(30%);
             filter: brightness(30%);
     background-position: center;
@@ -848,6 +852,7 @@ a:focus::after, .focusedlink::after{
 .btn-bg1:hover,
 .btn-bg1:focus,
 .icon-link:hover,
+.btn-bg2:hover,
 a.fc-white{
     color: var(--textWhite);
 }
@@ -898,61 +903,111 @@ a.fc-white{
 }
 
 /* valued partners start */
-
-@keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .logos {
-    overflow: hidden;
-    padding: 40px 0;
-    background: white;
-    white-space: nowrap;
-    position: relative;
-  }
-  
-  .logos:before,
-  .logos:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-  }
-  
-  .logos:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-  }
-  
-  .logos:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-  }
-  
-  .logos:hover .logos-slide {
-    animation-play-state: paused;
-  }
-  
-  .logos-slide {
-    display: inline-block;
-    animation: 35s slide infinite linear;
-  }
-  
-  .logos-slide img {
-    height: 60px;
-    margin: 0 30px;
-    width: 60px;
-  }
-
-
+.client_logo img{
+    height: 8rem;
+    width: 8rem;
+    margin: 2rem 2rem;
+}
 /* valued partners end */
+
+/* solutions section start */
+
+.solutionDiv > .col-tri2{
+    width: 70%;
+    display: flex;
+}
+
+.solutionDiv .solution-col{
+    width: 100rem;
+}
+
+.solutionDiv .solution-col ul{
+    line-height: 2rem;
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.solutionDiv .solution-col ul i {
+    margin-right: 1rem;
+}
+
+.solutionDiv .img{
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem auto;
+}
+
+
+/* Solutions section end */
+
+/* Technologies start */
+
+.logos {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin:1rem auto;
+}
+
+.logos-slide {
+    display: flex;
+    margin: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.logoCarousel {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tech_logo img {
+    height: 5rem;
+    width: 5rem;
+    margin: 0 15px;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.buttons button {
+    background-color: rgb(0, 17, 64, 0.8);
+    border: none;
+    color: white;
+    padding: .8rem 1rem;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.dots {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.dots li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(0, 17, 64, 0.75);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dots .active {
+    background-color: #001140;
+}
+
+
+/* Technologies end */
 
 /* What Sets Us Apart section start */
 .who_sets img{
@@ -974,6 +1029,10 @@ a.fc-white{
     width: 64px;
     height:64px;
 }
+.specCol-tri1{
+    top: 3rem;
+}
+
 
 /* service section end */
 
