@@ -1,37 +1,57 @@
-var copy = document.querySelector(".logos-slide").cloneNode(true);
-document.querySelector(".logos").appendChild(copy);
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.logos');
+    const buttons = document.querySelectorAll('.buttons button');
+    const dotsList = document.querySelectorAll('.dots');
 
-
-// technologies
-
-document.addEventListener("DOMContentLoaded", function() {
-    const prevButton = document.getElementById("prev-slide");
-    const nextButton = document.getElementById("next-slide");
-    const logoSlide = document.querySelector(".logo-slide");
-
-    let currentSlide = 0;
-    const slidesToShow = 4;
-
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-            updateSlide();
+    carousels.forEach((carousel, carouselIndex) => {
+        const slides = carousel.querySelector('.logos-slide');
+        const items = slides.querySelectorAll('.logoCarousel');
+        const dots = dotsList[carouselIndex].querySelectorAll('li');
+        let currentIndex = 0;
+        let autoSlideInterval;
+        
+        function updateCarousel() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
         }
-    }
-
-    function nextSlide() {
-        const totalSlides = Math.ceil(logoSlide.children.length / slidesToShow);
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-            updateSlide();
+        
+        function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+            }, 3000);
         }
-    }
+        
+        function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+        }
+        
+      buttons[carouselIndex * 2].addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+        updateCarousel();
+        });
+        
+      buttons[carouselIndex * 2 + 1].addEventListener('click', () => {
+        currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+        });
+        
+        dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+        });
+        
+      // Stop auto-slide on hover
+        buttons.forEach(button => {
+        button.addEventListener('mouseenter', stopAutoSlide);
+        button.addEventListener('mouseleave', startAutoSlide);
+        });
 
-    function updateSlide() {
-        const slideWidth = logoSlide.clientWidth;
-        logoSlide.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-    }
-
-    prevButton.addEventListener("click", prevSlide);
-    nextButton.addEventListener("click", nextSlide);
+        startAutoSlide();
+    });
 });
+    

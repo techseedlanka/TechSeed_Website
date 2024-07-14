@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:v="https://svgstorm.com" viewBox = "0 0 5000 315" width="4990" height="315">
 
 <!-- CHANGE FILL COLOR TO ALIGN TO YOUR NEW COLOR SCHEME -->
-<g fill="white" fill-opacity="1.00" stroke="None">
+<g fill="#F5F5F5" fill-opacity="1.00" stroke="None">
 <path d="
 M 0.00 146.00 
 L 0.00 315.00
