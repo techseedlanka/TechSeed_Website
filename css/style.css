@@ -126,7 +126,7 @@ nav > div{
 .logo > img{
     height: var(--navHeight);
     width: 20rem;
-    object-fit: contain;
+    object-fit: fill;
 }
 /* .logo::after{
     /* content: unset; 
