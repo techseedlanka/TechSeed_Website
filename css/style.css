@@ -678,16 +678,6 @@ section.bg-primary-foot{
     z-index: -1;
 }
 
-footer{
-    position: relative;
-    margin-top: 100px;
-    background-color: #001140;
-}
-footer > .copy{
-    padding: 10px 0;
-    background-color: #010a23;
-}
-
 .message-form input,
 .message-form textarea{
     -webkit-border-radius: 15px;
@@ -937,7 +927,31 @@ a.fc-white{
     margin: 1rem auto;
 }
 
+@media (min-width: 1030px) and (max-width: 1175px){
+    .solutionDiv > .col-tri2{
+        width: 80%;
+    }
+}
 
+@media (min-width: 920px) and (max-width: 1030px){
+    .solutionDiv > .col-tri2{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 920px){
+    .solutionDiv > .col-tri2{
+        flex-direction: column;
+    }
+    .solutionDiv .img{
+        width: 5rem;
+        height: 5rem;
+        margin: 1rem auto;
+    }
+    .solutionDiv .solution-col{
+        width: auto;
+    }
+}
 /* Solutions section end */
 
 /* Technologies start */
@@ -1006,6 +1020,23 @@ a.fc-white{
     background-color: #001140;
 }
 
+@media (min-width: 930px) and (max-width: 1030px){
+    .logos {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 930px){
+    .logos {
+        width: 90%;
+        margin-top: 2rem;
+    }
+    .logoCarousel {
+        display: block;
+        text-align: center;
+    }
+    
+}
 
 /* Technologies end */
 
@@ -1033,14 +1064,50 @@ a.fc-white{
     top: 3rem;
 }
 
+@media screen and (max-width : 950px) {
+    .serviceDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .specCol-tri1{
+        top: 0;
+    }
+    
+    .col-tri1{
+        width: 90%;
+        margin: 1rem auto;
+    }
+}
 
 /* service section end */
+
+/* Value we Bring start */
+
+@media screen and (max-width:800px) {
+    .valueDiv{
+        display: block;
+    }
+
+    .valueDiv > .col-tri2{
+        width: auto;
+    }
+}
+
+/* Value we Bring end */ 
 
 /* Industries page start */
 
 .industriesSec .row{
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width:992px) {
+    .col-slim1{
+        width: 80%;
+    }
 }
 
 /* Industries page end */
@@ -1051,7 +1118,40 @@ a.fc-white{
     width: 70%;
 }
 
+@media screen and (max-width: 992px) {
+    .solutionPage > .col-wide{
+        width: 90%;
+    }
+    
+    .solutionPage {
+        margin: 1rem auto;
+        justify-content: center;
+    }
+}
+
 /* Solution page end */
+
+/* Contact us page start */
+
+@media (min-width:830px) and (max-width:1290px) {
+    .col-Nextslim{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .col-next{
+        width: 80%;
+        margin: 1rem auto;
+    }
+    
+    .col-Nextslim{
+        width: 80%;
+        margin: 1rem auto;
+    }
+}
+
+/* Contact us page end */
 
 /* Tablet View */
 @media only screen and (max-width: 992px) {
@@ -1107,7 +1207,7 @@ a.fc-white{
         position: relative;
         margin: auto 20px auto auto;
         font-family: 'bootstrap-icons';
-        /* visibility: hidden; */
+        visibility: hidden;
         display: block;
         font-size: var(--h3TextSize);
     }
@@ -1202,3 +1302,97 @@ a.fc-white{
         height: auto;
     }
 }
+
+/* footer star */
+
+footer{
+    position: relative;
+    margin-top: 100px;
+    background-color: #001140;
+}
+footer > .copy{
+    padding: 10px 0;
+    background-color: #010a23;
+}
+
+.footer-quick{
+    margin-left: 5rem;
+}
+
+.footer-schedule{
+    width: 15%; 
+    margin-right: 5rem;
+}
+
+.footer-useful{
+    width: 20%;
+}
+
+@media (min-width:1052px) and (max-width:1085px) {
+    .footer-web{
+        width: 25%;
+    }
+
+    .footer-quick{
+        width: 25%; 
+        margin-left: 10px;
+    }
+    
+    .footer-schedule{
+        width: 20%; 
+        margin-left:10px;
+        margin-right: 0;
+    }
+    
+    .footer-useful{
+        width: 12%;
+    }
+}
+
+@media (min-width:525px) and (max-width:1052px) {
+    .footer-web{
+        width: 45%;
+        margin-left: 2rem;
+    }
+
+    .footer-quick{
+        width: 40%; 
+        margin-right:2rem;
+    }
+    
+    .footer-schedule{
+        width: 45%;
+        margin-left: 2rem;
+        margin-right: 0;
+    }
+    
+    .footer-useful{
+        width: 40%; 
+        margin-right:10px;
+        margin-left: 3rem;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .footer-web{
+        width: auto;
+    }
+
+    .footer-quick{
+        width: auto; 
+        margin-left: 0;
+    }
+    
+    .footer-schedule{
+        width: auto; 
+        margin-left:0;
+        margin-right: 0;
+    }
+    
+    .footer-useful{
+        width: auto;
+    }
+}
+
+
+/* footer end */
