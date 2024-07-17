@@ -266,12 +266,6 @@ section.bg-primary-foot{
             border-radius: unset;
     margin: unset;
 }
-/* .hero-banner{
-    -webkit-animation: hero-slideshow 15s infinite linear;
-       -moz-animation: hero-slideshow 15s infinite linear;
-         -o-animation: hero-slideshow 15s infinite linear;
-            animation: hero-slideshow 15s infinite linear;
-} */
 .sub-hero-banner{
     height:60vh;
 }
@@ -295,7 +289,19 @@ section.bg-primary-foot{
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    /* padding: 0px; */
+    opacity: 0;
+    transform: translateY(100px);
+    animation: pop-up 2s forwards ease-in-out;
+}
+@keyframes pop-up{
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .hero-socials{
     position: absolute;
