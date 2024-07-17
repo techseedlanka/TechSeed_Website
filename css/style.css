@@ -1107,7 +1107,7 @@ a.fc-white{
         position: relative;
         margin: auto 20px auto auto;
         font-family: 'bootstrap-icons';
-        visibility: hidden;
+        /* visibility: hidden; */
         display: block;
         font-size: var(--h3TextSize);
     }
