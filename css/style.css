@@ -1188,6 +1188,11 @@ a.fc-white{
         width: 12rem;
     }
 
+    .logo > img{
+        width: 17rem;
+        object-fit: fill;
+    }
+
     .navigation-container{
         position: absolute;
         top: 100%; left: 0;
@@ -1241,7 +1246,7 @@ a.fc-white{
     }
     .tab-mob-menu::after{
         position: absolute;
-        top: 50%; left: 50%;
+        top: -5%; left: 100%;
         -webkit-transform: translate(-50%, -50%);
            -moz-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
