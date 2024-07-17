@@ -1166,6 +1166,28 @@ a.fc-white{
         width: 80%;
     }
 
+    .hero-title > h1{
+        margin: 0;
+    }
+
+    .hero-title > p{
+        margin-bottom: 0;
+    }
+
+    h1 { 
+        font-size: 35px;
+    }
+    h2, .fs-h2 { 
+        font-size: 28px; 
+    }
+    h3, .fs-h3 { 
+        font-size: 22px; 
+    }
+
+    .section-title {
+        width: 12rem;
+    }
+
     .navigation-container{
         position: absolute;
         top: 100%; left: 0;
@@ -1355,7 +1377,7 @@ footer > .copy{
     }
 }
 
-@media (min-width:525px) and (max-width:1052px) {
+@media (min-width:960px) and (max-width:1052px) {
     .footer-web{
         width: 45%;
         margin-left: 2rem;
@@ -1381,22 +1403,23 @@ footer > .copy{
 
 @media screen and (max-width:960px) {
     .footer-web{
-        width: auto;
+        width: 100%;
+        margin: 0;
     }
 
     .footer-quick{
-        width: auto; 
-        margin-left: 0;
+        width: 100%;
+        margin: 0;
     }
     
     .footer-schedule{
-        width: auto; 
-        margin-left:0;
-        margin-right: 0;
+        width: 100%;
+        margin:0;
     }
     
     .footer-useful{
-        width: auto;
+        width: 100%;
+        margin: 0;
     }
 }
 
