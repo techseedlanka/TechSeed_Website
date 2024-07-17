@@ -253,9 +253,9 @@ section.bg-primary-foot{
     height: -webkit-calc(100vh - var(--navHeight));
     height: -moz-calc(100vh - var(--navHeight));
     height: calc(100vh - var(--navHeight));
-    -moz-background-size: cover;
-      -o-background-size: cover;
-         background-size: cover;
+    /* -moz-background-size: cover;
+      -o-background-size: cover; */
+         background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -1036,12 +1036,22 @@ a.fc-white{
 
 /* service section end */
 
-/* Industries page */
+/* Industries page start */
 
 .industriesSec .row{
     display: flex;
     justify-content: center;
 }
+
+/* Industries page end */
+
+/* Solution page start */
+
+.solutionPage > .col-wide{
+    width: 70%;
+}
+
+/* Solution page end */
 
 /* Tablet View */
 @media only screen and (max-width: 992px) {
