@@ -948,6 +948,7 @@ a.fc-white{
 @media only screen and (max-width: 920px){
     .solutionDiv > .col-tri2{
         flex-direction: column;
+        width: auto;
     }
     .solutionDiv .img{
         width: 5rem;
@@ -956,6 +957,9 @@ a.fc-white{
     }
     .solutionDiv .solution-col{
         width: auto;
+    }
+    .solution-col-para{
+        text-align: center;
     }
 }
 /* Solutions section end */
