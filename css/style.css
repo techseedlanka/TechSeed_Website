@@ -1223,24 +1223,29 @@ a.fc-white{
 
     .hero-title > h1{
         margin: 0;
+        font-size: 25px;
+        margin-bottom: 2rem;
     }
 
     .hero-title > p{
-        margin-bottom: 0;
+        margin-bottom: 2rem;
+        font-size: 16px;
     }
 
     h1 { 
         font-size: 35px;
     }
     h2, .fs-h2 { 
-        font-size: 28px; 
+        font-size: 25px; 
     }
     h3, .fs-h3 { 
-        font-size: 22px; 
+        font-size: 21px; 
     }
 
     .section-title {
-        width: 12rem;
+        width: 18rem;
+        padding: 0%;
+        padding-top: 5px;
     }
 
     .logo > img{
