@@ -697,6 +697,19 @@ section.bg-primary-foot{
     width: 100%;
     background-color: var(--primaryBgBody);
 }
+
+.message-form select{
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--primaryBgBody);
+    font-family: 'nunito';
+    font-size: var(--pTextSize);
+    border: none;
+    color: #6d6e71;
+}
+
 .message-form > .row > input{
     width: -webkit-calc(50% - 20px);
     width: -moz-calc(50% - 20px);
