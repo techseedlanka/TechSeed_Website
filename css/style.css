@@ -1046,7 +1046,25 @@ a.fc-white{
         display: block;
         text-align: center;
     }
-    
+
+    .logos-slide{
+        margin: .5rem;
+    }
+    .tech_logo > .logoCarousel > img{
+        height: 3rem;
+        width: 3rem;
+        padding: 1rem;
+    }
+    .client_logo > .logoCarousel > img {
+        height: 5rem;
+        width: 5rem;
+        padding: 1rem;
+        margin: 0;
+    }
+    .buttons button {
+        padding: .2rem .4rem;
+        border-radius: 2rem;
+    }
 }
 
 /* Technologies end */
@@ -1127,6 +1145,10 @@ a.fc-white{
 
 .solutionPage > .col-wide{
     width: 70%;
+}
+
+.solutionPage .col-wide > p{
+    margin-bottom: 4rem;
 }
 
 @media screen and (max-width: 992px) {
@@ -1283,8 +1305,26 @@ a.fc-white{
     }
 }
 
+.hero-banner{
+    background-image: url('../art/Landing_View.svg');
+}
+
+@media only screen and (max-width: 920px){
+    .hero-banner{
+        background-image: url('../art/Landing_mobile.svg');
+    }
+}
+
 /* Mobile View */
 @media only screen and (max-width: 600px){
+    .hero-banner,
+    .sub-hero-banner{
+        background-attachment: local;
+        background-size:cover;
+        /* height: 100vh; */
+        /* width: 10rem; */
+    }
+
     .sticky-img-dual{
         width: 100%;
         height: auto;
@@ -1293,11 +1333,7 @@ a.fc-white{
         height: 250px;
     }
     .sticky-img-dual > img:first-child{
-        -webkit-transform: none;
-           -moz-transform: none;
-            -ms-transform: none;
-             -o-transform: none;
-                transform: none;
+        display: none;
     }
     .sticky-img-dual > img:last-child{
         position: unset;
@@ -1331,13 +1367,6 @@ a.fc-white{
         -webkit-border-top-left-radius: 0;
            -moz-border-radius-topleft: 0;
                 border-top-left-radius: 0;
-    }
-}
-
-@media only screen and (max-height: 500px) {
-    .hero-banner,
-    .sub-hero-banner{
-        height: auto;
     }
 }
 
