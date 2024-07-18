@@ -284,6 +284,7 @@ section.bg-primary-foot{
 }
 .hero-title{
     position: relative;
+    padding-left: 1rem ;
     width: 75%;
     z-index: 1;
     -webkit-box-sizing: border-box;
