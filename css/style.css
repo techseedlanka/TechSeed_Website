@@ -899,14 +899,6 @@ a.fc-white{
             animation: fade 1s ease-out;
 }
 
-/* valued partners start */
-.client_logo img{
-    height: 8rem;
-    width: 8rem;
-    margin: 2rem 2rem;
-}
-/* valued partners end */
-
 /* solutions section start */
 
 .solutionDiv > .col-tri2{
@@ -964,6 +956,46 @@ a.fc-white{
     }
 }
 /* Solutions section end */
+
+/* valued partners start */
+.client_logo img{
+    height: 8rem;
+    width: 8rem;
+    margin: 2rem 2rem;
+}
+
+.clients-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 545px){
+    .clients-mobile {
+        display: block;
+    }
+
+    .clients{
+        display: none;
+    }
+
+    .client_logo > .logoCarousel > img {
+        height: 6rem;
+        width: 6rem;
+        padding: 1rem;
+        margin: 0;
+    }
+}
+
+
+@media (min-width: 545px) and (max-width: 930px){
+    .client_logo > .logoCarousel > img {
+        height: 5rem;
+        width: 5rem;
+        padding: 1rem;
+        margin: 0;
+    }
+}
+
+/* valued partners end */
 
 /* Technologies start */
 
@@ -1055,17 +1087,13 @@ a.fc-white{
         width: 3rem;
         padding: 1rem;
     }
-    .client_logo > .logoCarousel > img {
-        height: 5rem;
-        width: 5rem;
-        padding: 1rem;
-        margin: 0;
-    }
     .buttons button {
         padding: .2rem .4rem;
         border-radius: 2rem;
     }
 }
+
+
 
 /* Technologies end */
 
@@ -1309,21 +1337,39 @@ a.fc-white{
     background-image: url('../art/Landing_View.svg');
 }
 
-@media only screen and (max-width: 920px){
+.career-banner{
+    background-image: url('../art/careers.jpg');
+}
+
+@media only screen and (max-width: 425px){
     .hero-banner{
         background-image: url('../art/Landing_mobile.svg');
     }
 }
 
-/* Mobile View */
 @media only screen and (max-width: 600px){
+    .career-banner{
+        background-image: url('../art/careers-mobile.jpg');
+    }
+}
+
+
+@media (min-width: 425px) and (max-width: 920px){
+    .hero-banner{
+        background-image: url('../art/Landing_tablet.svg');
+    }
+}
+
+@media only screen and (max-width: 900px){
     .hero-banner,
     .sub-hero-banner{
         background-attachment: local;
         background-size:cover;
-        /* height: 100vh; */
-        /* width: 10rem; */
     }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 600px){
 
     .sticky-img-dual{
         width: 100%;
