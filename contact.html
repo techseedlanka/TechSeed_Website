@@ -89,7 +89,7 @@
                         </div>
                         <input type="text" name="message-subject" id="message-subject" aria-label="Input for your message subject" class="mb-20" placeholder="Subject">
                         <textarea id="message-message" name="message-message" rows="5" placeholder="Write a message" aria-label="Input for writing message"></textarea>
-                        <button type="submit" class="btn-bg1 border-round mt-20">Send message</button>
+                        <button onclick="validateForm()" type="submit" class="btn-bg1 border-round mt-20">Send message</button>
                     </form>
                 </div>
                 <!-- EMBEDED MAP IFRAME END -->
@@ -245,4 +245,21 @@
     </footer>
     <!-- FOOTER END -->
 </body>
+<script>
+    function validateForm() {
+        const name = document.getElementById('message-name').value;
+        const email = document.getElementById('message-email').value;
+        const subject = document.getElementById('message-subject').value;
+        const message = document.getElementById('message-message').value;
+
+        if (name && email && subject && message) {
+            changeLabel();
+        }
+    }
+
+    function changeLabel() {
+        const button = document.querySelector('button[type="submit"]');
+        button.innerHTML = 'Button Clicked!';
+    }
+</script>
 </html>
