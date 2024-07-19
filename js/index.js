@@ -54,4 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     });
 });
-    
+
+
+// contact form
+
+function validateForm() {
+  const name = document.getElementById('message-name').value;
+  const email = document.getElementById('message-email').value;
+  const subject = document.getElementById('message-subject').value;
+  const message = document.getElementById('message-message').value;
+
+  if (name && email && subject && message) {
+      changeLabel();
+  }
+}
+
+function changeLabel() {
+  const button = document.querySelector('button[type="submit"]');
+  button.innerHTML = 'Sending!';
+}
