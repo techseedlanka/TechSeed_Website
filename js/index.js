@@ -71,5 +71,5 @@ function validateForm() {
 
 function changeLabel() {
   const button = document.querySelector('button[type="submit"]');
-  button.innerHTML = 'Button Clicked!';
+  button.innerHTML = 'Sending!';
 }
