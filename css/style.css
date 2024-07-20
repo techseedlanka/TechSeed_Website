@@ -872,15 +872,13 @@ a.fc-white{
        -moz-box-shadow: 0 8px 15px -10px var(--primaryColor);
             box-shadow: 0 8px 15px -10px var(--primaryColor);
 }
-.btn-bg2:hover,
-.btn-bg2:focus{
+.btn-bg2:hover{
     -webkit-box-shadow: 0 8px 15px -10px var(--bgWhite);
        -moz-box-shadow: 0 8px 15px -10px var(--bgWhite);
             box-shadow: 0 8px 15px -10px var(--bgWhite);
 }
 
 [class*="btn-"]:hover,
-[class*="btn-"]:focus,
 .icon-link:hover > i{
     -webkit-transform: translateY(-3px);
        -moz-transform: translateY(-3px);

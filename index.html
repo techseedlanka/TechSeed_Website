@@ -496,7 +496,7 @@
         </section>
         <!-- Value we Bring end -->
 
-        <!-- Technologies & Platforms we work with start  -->
+        <!-- Technologies & Platforms we work with start
         <section class="contained ta-center">
             <h2 class="section-title ff-damion">Technologies & Platforms we work with</h2>
             <div class="logos">
@@ -559,7 +559,7 @@
                 <li></li>
             </ul>
         </section>
-        <!-- Technologies & Platforms we work with end -->
+        Technologies & Platforms we work with end -->
 
 
 
@@ -570,11 +570,12 @@
                     <h3 class="mb-a ff-damion mt-a">Subscribe to our newsletter:</h3>
                 </div>
                 <div class="col-balance">
-                    <form action="#">
-                        <input type="email" id="subscribe-email" aria-label="Subscribe to our email news" placeholder="Email" required>
-                        <button class="btn-bg2">Subscribe</button>
+                    <form name="submit-to-google-sheet">
+                        <input type="email" name="subscribe-email" id="subscribe-email" aria-label="Subscribe to our email news" placeholder="Email" required>
+                        <button onclick="subForm()" type="submit" class="btn-bg2">Subscribe</button>
                     </form>
                 </div>
+                <span id="sub-success-msg"></span>
             </div>
         </section>
         <!-- SUBSCRIBE TO NEWS LETTERS ENS -->

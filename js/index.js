@@ -73,3 +73,23 @@ function changeLabel() {
   const button = document.querySelector('button[type="submit"]');
   button.innerHTML = 'Sending!';
 }
+
+
+// subscription form
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzYt85NOMfcffOF_rZqGmVpo_UMiz_Z16AnXLV27-tR6YQaft3pC1s1zogJsT16UQib/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("sub-success-msg")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        msg.innerHTML="Thank You For Subscribing!";
+        setTimeout(function(){
+            msg.innerHTML="";
+        },5000);
+        form.reset();
+    })
+    .catch(error => console.error('Error!', error.message))
+})
