@@ -910,6 +910,14 @@ a.fc-white{
             animation: fade 1s ease-out;
 }
 
+/* About section start */
+
+p{
+    line-height: 1.6;
+}
+
+/* About section End */
+
 /* solutions section start */
 
 .solutionDiv > .col-tri2{
