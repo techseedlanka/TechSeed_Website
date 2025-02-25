@@ -61,3 +61,7 @@
 .ta-left{
     text-align: left;
 }
+
+.line-height-max{
+    line-height: 2;
+}
