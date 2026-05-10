@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayMaster | Email Sending Module - Enterprise Payroll Solution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #023086;
+            --primary-glow: rgba(2, 48, 134, 0.3);
+            --bg: #05070a;
+            --surface: #0f1218;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
+            --accent: #2c6fff;
+            --glass: rgba(15, 18, 24, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px var(--primary-glow); }
+            50% { box-shadow: 0 0 20px var(--primary-glow); }
+            100% { box-shadow: 0 0 5px var(--primary-glow); }
+        }
+
+        @keyframes float {
+            0% { transform: rotateY(-15deg) rotateX(10deg) skewY(-2deg) translateY(0px); }
+            50% { transform: rotateY(-15deg) rotateX(10deg) skewY(-2deg) translateY(-15px); }
+            100% { transform: rotateY(-15deg) rotateX(10deg) skewY(-2deg) translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            70% { transform: scale(1.4); opacity: 0; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        .pulse-layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: pulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pulse-layer:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #0341b3;
+            box-shadow: 0 10px 20px var(--primary-glow);
+        }
+
+        /* --- Hero --- */
+        .hero {
+            padding: 12rem 0 8rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 4rem;
+            position: relative;
+            text-align: left;
+        }
+
+        /* Background glow effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        .hero-content {
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.05;
+            background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image-container {
+            perspective: 2000px;
+            width: 100%;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transform: rotateY(-15deg) rotateX(10deg) skewY(-2deg);
+            transform-style: preserve-3d;
+            box-shadow: 
+                -20px 30px 60px -12px rgba(0, 0, 0, 0.7),
+                -10px 18px 36px -18px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(2, 48, 134, 0.1);
+            animation: fadeIn 1.2s ease forwards;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-image:hover {
+            transform: rotateY(-5deg) rotateX(5deg) skewY(-1deg) scale(1.02);
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- Features --- */
+        .features {
+            padding: 8rem 0;
+            background: linear-gradient(180deg, var(--bg) 0%, #0a0c10 100%);
+        }
+
+        .section-tag {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-weight: 700;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(44, 111, 255, 0.3);
+            background: rgba(15, 18, 24, 0.8);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(44, 111, 255, 0.05), transparent 70%);
+            z-index: -1;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        /* --- Use Cases --- */
+        .use-cases {
+            padding: 8rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px dashed var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            border-style: solid;
+            border-color: var(--accent);
+            background: var(--surface);
+            transform: translateY(-5px);
+        }
+
+        .use-case-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .use-case-card h4 {
+            font-size: 1.125rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-case-card p {
+            font-size: 0.875rem;
+            color: var(--text-dim);
+        }
+
+        /* --- Stats/Benefits --- */
+        .stats {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        /* --- Modal --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background: var(--surface);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #fff;
+        }
+
+        .modal h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-value:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <div class="logo">Pay<span>Master</span> Email</div>
+            <a href="javascript:void(0)" class="btn-primary" onclick="openModal()">Request Demo</a>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <div class="hero-content">
+            <span class="section-tag animate">Enterprise Payslip Delivery</span>
+            <h1 class="animate">Revolutionize Your Payroll Communication</h1>
+            <p class="animate">A power-packed module for the PayMaster Payroll System. Securely deliver payslips to your entire workforce with a single click, reducing costs and increasing transparency.</p>
+            <div class="animate">
+                <a href="#" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="hero-image-container">
+            <div class="pulse-layer"></div>
+            <div class="pulse-layer"></div>
+            <div class="hero-image float-anim">
+                <img src="email.png" alt="PayMaster Dashboard Preview">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <span class="section-tag">Powerful Features</span>
+            <h2 class="section-title">Everything you need for seamless delivery</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Bulk or Single Delivery</h3>
+                    <p>Send thousands of payslips instantly to your whole company, or target specific individual employees for one-off updates.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Massive Cost Savings</h3>
+                    <p>Eliminate paper, printing, and distribution overhead. Go paperless and save up to 90% on payroll operation costs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>History & Audit Logs</h3>
+                    <p>Complete traceability for every email sent. View timestamps, recipient logs, and user activity records for full compliance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Unlimited Resends</h3>
+                    <p>Employee lost their access? Resend payslips anytime, as many times as needed, with zero additional effort.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Always Accessible</h3>
+                    <p>Empower your employees. Their payroll history stays safely in their inbox, accessible anywhere, anytime, on any device.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Secure, encrypted delivery ensures that sensitive payroll data reaches only the intended recipient with full confidentiality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases container">
+        <span class="section-tag">Versatile Utility</span>
+        <h2 class="section-title">Beyond Payslips: Complete Employee Engagement</h2>
+        
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <span class="use-case-icon">📢</span>
+                <h4>Official Notifications</h4>
+                <p>Broadcast critical company updates, policy changes, and urgent alerts to everyone instantly.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <span class="use-case-icon">🎄</span>
+                <h4>Holiday Wishes</h4>
+                <p>Improve morale with personalized seasonal greetings and holiday announcements.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <span class="use-case-icon">🎂</span>
+                <h4>Birthday Wishes</h4>
+                <p>Automate personal celebration wishes. Make every employee feel valued on their special day.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <span class="use-case-icon">👋</span>
+                <h4>Welcome & Onboarding</h4>
+                <p>Ensure a smooth first day with automated welcome emails and onboarding materials.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <span class="use-case-icon">📈</span>
+                <h4>Career Milestones</h4>
+                <p>Personalized notifications for promotions, rank changes, and career path advancements.</p>
+            </div>
+
+            <div class="use-case-card">
+                <span class="use-case-icon">📜</span>
+                <h4>Document Services</h4>
+                <p>Request required certificates or send automated reminders for expiring documentation.</p>
+            </div>
+
+            <div class="use-case-card">
+                <span class="use-case-icon">🎓</span>
+                <h4>Training & Dev</h4>
+                <p>Broadcast workshop invites, training schedules, and professional development updates.</p>
+            </div>
+
+            <div class="use-case-card">
+                <span class="use-case-icon">⚖️</span>
+                <h4>Performance Reviews</h4>
+                <p>Automate feedback cycle reminders and formal notification of performance appraisals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <h2>100% Paperless</h2>
+                <p>Join the future of payroll communication with the most efficient delivery solution.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Pay<span>Master</span> HRMS</div>
+            <p>&copy; 2026 PayMaster. All rights reserved. Designed for Enterprise Efficiency.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.5;">
+                Powered by TechSeed Lanka
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="demoModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <span class="section-tag" style="margin-bottom: 0.5rem;">Connect With Us</span>
+            <h2>Get Started Today</h2>
+            <p style="color: var(--text-dim); margin-bottom: 2rem;">Ready to modernize your payroll system? Reach out via our official channels below.</p>
+            
+            <div class="contact-item">
+                <span class="contact-label">Official Emails</span>
+                <a href="mailto:info@techseed.lk" class="contact-value">info@techseed.lk</a>
+                <a href="mailto:hello@techseed.lk" class="contact-value">hello@techseed.lk</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-label">Direct Hotline</span>
+                <a href="tel:+94787016793" class="contact-value">+94 78 701 6793</a>
+            </div>
+
+            <a href="javascript:void(0)" class="btn-primary" style="display: block; margin-top: 2rem;" onclick="closeModal()">Got it</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('demoModal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeModal(event) {
+            const modal = document.getElementById('demoModal');
+            modal.classList.remove('active');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+
+</body>
+</html>
